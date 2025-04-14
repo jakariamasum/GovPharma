@@ -1,4 +1,5 @@
-import { Link, Pill } from "lucide-react";
+import { Pill } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -20,22 +21,31 @@ const Footer = () => {
             <h3 className="font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className=" hover:text-black">
+                <Link href="/" className="hover:underline hover:text-teal-500">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="#features" className=" hover:text-black">
+                <Link
+                  href="#features"
+                  className="hover:underline hover:text-teal-500"
+                >
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="#how-it-works" className=" hover:text-black">
+                <Link
+                  href="#how-it-works"
+                  className="hover:underline hover:text-teal-500"
+                >
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link href="#faq" className=" hover:text-black">
+                <Link
+                  href="#faq"
+                  className="hover:underline hover:text-teal-500"
+                >
                   FAQ
                 </Link>
               </li>
@@ -45,17 +55,26 @@ const Footer = () => {
             <h3 className="font-bold mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/terms" className=" hover:text-black">
+                <Link
+                  href="/terms"
+                  className="hover:underline hover:text-teal-500"
+                >
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className=" hover:text-black">
+                <Link
+                  href="/privacy"
+                  className="hover:underline hover:text-teal-500"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/accessibility" className=" hover:text-black">
+                <Link
+                  href="/accessibility"
+                  className="hover:underline hover:text-teal-500"
+                >
                   Accessibility
                 </Link>
               </li>
