@@ -6,7 +6,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
         {/* Left Section */}
         <div>
-          <h4 className="text-emerald-500 font-semibold text-sm uppercase mb-2">
+          <h4 className="text-teal-500 font-semibold text-sm uppercase mb-2">
             Our Services
           </h4>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -22,7 +22,7 @@ const Services = () => {
             molestie, rutrum eleifend suspendisse aenean bibendum vulputate
             libero taciti hendrerit condimentum
           </p>
-          <button className="bg-emerald-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-emerald-600 transition">
+          <button className="bg-teal-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-emerald-600 transition">
             Discover More
           </button>
         </div>
@@ -36,7 +36,7 @@ const Services = () => {
           />
         </div>
         <div className="">
-          <div className="bg-[#F9F9F9] shadow-lg rounded-xl p-7 w-full max-w-sm h-auto shadow-lg">
+          <div className="bg-[#F9F9F9] rounded-xl p-7 w-full max-w-sm h-auto shadow-lg">
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
               Your health, your choice
             </h3>
@@ -58,7 +58,7 @@ const Services = () => {
                 </div>
                 <div className="w-full bg-gray-200 h-2 rounded-full mt-1">
                   <div
-                    className="bg-emerald-500 h-2 rounded-full"
+                    className="bg-teal-500 h-2 rounded-full"
                     style={{ width: `${value}%` }}
                   ></div>
                 </div>

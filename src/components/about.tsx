@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import about from "../assests/about.jpg";
+import Counter from "./counter";
 
 const About = () => {
   return (
@@ -13,17 +15,14 @@ const About = () => {
           width={100}
           height={100}
         />
-        <div className="absolute top-4 left-4 bg-white shadow-md rounded-full p-6 text-center">
-          <p className="text-3xl font-bold text-green-700">25+</p>
-          <p className="text-sm font-medium text-gray-600 mt-1">
-            Years of Experience
-          </p>
+        <div className="absolute top-4 left-4 bg-white shadow-2xl rounded-full p-6 text-center">
+          <Counter end={25} label="Years Experience" />
         </div>
       </div>
 
       {/* Right - Text Content */}
       <div className="w-full lg:w-1/2 text-center lg:text-left">
-        <p className="text-green-600 font-semibold mb-2">ABOUT US</p>
+        <p className="text-teal-600 font-semibold mb-2">ABOUT US</p>
         <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
           We Are Professional <br />
           Pharmacy & Medical <br />
@@ -39,7 +38,7 @@ const About = () => {
           parturient a elit euismod sociosqu finibus imperdiet. Auctor nisi
           porttitor quisque etiam posuere aptent.
         </p>
-        <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium transition">
+        <button className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-full font-medium transition">
           DISCOVER MORE
         </button>
       </div>

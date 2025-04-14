@@ -42,7 +42,7 @@ const WhatWeOffer: FC = () => {
         </div>
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
           Dedicated to Your{" "}
-          <span className="text-green-600 italic">GovPharma</span>
+          <span className="text-teal-600 italic">GovPharma</span>
         </h2>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -51,7 +51,7 @@ const WhatWeOffer: FC = () => {
               key={index}
               className={`rounded-2xl p-6 h-full ${
                 feature.active
-                  ? "bg-gradient-to-br from-green-800 to-green-600 text-white"
+                  ? "bg-gradient-to-br from-teal-800 to-teal-600 text-white"
                   : "bg-white text-gray-900 shadow-sm"
               } transition-all duration-300`}
             >
@@ -59,7 +59,7 @@ const WhatWeOffer: FC = () => {
                 src={feature.icon}
                 alt={`${feature.title} icon`}
                 className={`w-12 h-12 mb-4 ${
-                  feature.active ? "invert brightness-0" : "text-green-600"
+                  feature.active ? "invert brightness-0" : "text-teal-600"
                 }`}
                 width={12}
                 height={12}
@@ -71,7 +71,7 @@ const WhatWeOffer: FC = () => {
               <a
                 href="#"
                 className={`inline-flex items-center text-sm font-medium ${
-                  feature.active ? "text-white" : "text-green-700"
+                  feature.active ? "text-white" : "text-teal-700"
                 }`}
               >
                 Learn More

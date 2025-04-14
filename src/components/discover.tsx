@@ -20,7 +20,7 @@ const Discover = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
           tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
         </p>
-        <button className="bg-green-400 hover:bg-green-500 text-white font-medium px-6 py-3 rounded-full transition">
+        <button className="bg-teal-400 hover:bg-teal-500 text-white font-medium px-6 py-3 rounded-full transition">
           DISCOVER MORE
         </button>
       </div>
