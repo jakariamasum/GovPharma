@@ -1,12 +1,12 @@
-// components/admin/AdminLayout.tsx
 "use client";
 
 import { ReactNode, useContext } from "react";
 import { Bell, Moon, Search, Sun, UserCircle } from "lucide-react";
-import Link from "next/link";
 import { cn } from "@/utils/CN";
 import { ThemeContext } from "@/app/context/theme-context";
 import AdminNav from "../admin-navbar";
+import CurrentRoute from "../current-route";
+import { usePathname } from "next/navigation";
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -14,6 +14,8 @@ interface AdminLayoutProps {
 
 export default function AdminLayout({ children }: AdminLayoutProps) {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const pathname = usePathname();
+  console.log(pathname);
 
   return (
     <div
@@ -28,17 +30,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       <div className="flex-1 flex flex-col ">
         {/* Topbar */}
         <header className="w-full px-4 md:px-8 py-4 border-b dark:border-gray-700 flex items-center justify-between bg-white dark:bg-gray-800">
-          <div className="md:flex items-center gap-4 hidden ">
-            <nav className="text-sm text-gray-600 dark:text-gray-300">
-              <ol className="list-none p-0 inline-flex space-x-2">
-                <li>
-                  <Link href="/admin">Dashboard</Link>
-                </li>
-                <li>/</li>
-                <li className="text-teal-500">Current Page</li>
-              </ol>
-            </nav>
-          </div>
+          <CurrentRoute label={"TO DO Here"} link={pathname} />
 
           {/* Right: actions */}
           <div className="flex items-center gap-4">
