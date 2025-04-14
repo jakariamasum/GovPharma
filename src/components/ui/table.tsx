@@ -4,57 +4,68 @@ interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> {
   children: React.ReactNode;
 }
 
-export function Table({ className, children, ...props }: TableProps) {
+export const PharmaTable = ({ className, children, ...props }: TableProps) => {
   return (
-    <div className="relative w-full overflow-auto">
+    <div className="relative w-full overflow-auto rounded-xl border border-slate-200">
       <table
-        className={cn("w-full caption-bottom text-sm", className)}
+        className={cn(
+          "w-full caption-bottom text-sm text-slate-700",
+          className
+        )}
         {...props}
       >
         {children}
       </table>
     </div>
   );
-}
+};
 
 interface TableHeaderProps
   extends React.HTMLAttributes<HTMLTableSectionElement> {
   children: React.ReactNode;
 }
 
-export function TableHeader({
+export const PharmaTableHeader = ({
   className,
   children,
   ...props
-}: TableHeaderProps) {
+}: TableHeaderProps) => {
   return (
-    <thead className={cn("[&_tr]:border-b", className)} {...props}>
+    <thead className={cn("[&_tr]:border-b bg-slate-50", className)} {...props}>
       {children}
     </thead>
   );
-}
+};
 
 interface TableBodyProps extends React.HTMLAttributes<HTMLTableSectionElement> {
   children: React.ReactNode;
 }
 
-export function TableBody({ className, children, ...props }: TableBodyProps) {
+export const PharmaTableBody = ({
+  className,
+  children,
+  ...props
+}: TableBodyProps) => {
   return (
     <tbody className={cn("[&_tr:last-child]:border-0", className)} {...props}>
       {children}
     </tbody>
   );
-}
+};
 
 interface TableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {
   children: React.ReactNode;
 }
 
-export function TableRow({ className, children, ...props }: TableRowProps) {
+export const PharmaTableRow = ({
+  className,
+  children,
+  ...props
+}: TableRowProps) => {
   return (
     <tr
       className={cn(
-        "border-b transition-colors hover:bg-slate-50 data-[state=selected]:bg-slate-100",
+        "border-b transition-colors hover:bg-teal-50 data-[state=selected]:bg-teal-100",
         className
       )}
       {...props}
@@ -62,17 +73,21 @@ export function TableRow({ className, children, ...props }: TableRowProps) {
       {children}
     </tr>
   );
-}
+};
 
 interface TableHeadProps extends React.ThHTMLAttributes<HTMLTableCellElement> {
   children: React.ReactNode;
 }
 
-export function TableHead({ className, children, ...props }: TableHeadProps) {
+export const PharmaTableHead = ({
+  className,
+  children,
+  ...props
+}: TableHeadProps) => {
   return (
     <th
       className={cn(
-        "h-12 px-4 text-left align-middle font-medium text-slate-500",
+        "h-12 px-6 text-left align-middle font-semibold text-teal-800",
         className
       )}
       {...props}
@@ -80,16 +95,23 @@ export function TableHead({ className, children, ...props }: TableHeadProps) {
       {children}
     </th>
   );
-}
+};
 
 interface TableCellProps extends React.TdHTMLAttributes<HTMLTableCellElement> {
   children: React.ReactNode;
 }
 
-export function TableCell({ className, children, ...props }: TableCellProps) {
+export const PharmaTableCell = ({
+  className,
+  children,
+  ...props
+}: TableCellProps) => {
   return (
-    <td className={cn("p-4 align-middle", className)} {...props}>
+    <td
+      className={cn("px-6 py-4 align-middle text-sm text-slate-700", className)}
+      {...props}
+    >
       {children}
     </td>
   );
-}
+};

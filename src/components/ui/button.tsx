@@ -29,7 +29,7 @@ const Button = ({
       "bg-teal-600 text-white hover:bg-white hover:text-teal-600 border border-teal-500",
     secondary: "bg-slate-100 text-slate-900 hover:bg-slate-200",
     outline:
-      "border border-slate-200 bg-transparent hover:bg-teal-500 text-slate-900 hover:text-white",
+      "px-4 py-2 text-sm font-medium border rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-teal-800 border-teal-800 hover:bg-teal-800 hover:text-white",
     ghost: "bg-transparent hover:bg-slate-100 text-slate-900",
     link: "bg-transparent underline-offset-4 hover:underline text-slate-900 p-0 h-auto",
     destructive: "bg-red-500 text-white hover:bg-red-600",
