@@ -1,5 +1,6 @@
 "use client";
 
+import InventoryForm from "@/components/medicine-inventory-form";
 import StatCard from "@/components/stat-card";
 import Button from "@/components/ui/button";
 import {
@@ -149,6 +150,7 @@ const Inventory = () => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+      <InventoryForm onSubmit={() => {}} />
     </section>
   );
 };
