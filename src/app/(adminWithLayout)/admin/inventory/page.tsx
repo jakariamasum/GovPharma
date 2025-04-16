@@ -1,6 +1,7 @@
 "use client";
 
 import InventoryForm from "@/components/medicine-inventory-form";
+import PharmaModal from "@/components/modal/PharmaModal";
 import StatCard from "@/components/stat-card";
 import Button from "@/components/ui/button";
 import {
@@ -22,6 +23,7 @@ import {
 } from "@/components/ui/table";
 import { FileDown, Plus, Search } from "lucide-react";
 import { useState } from "react";
+import { FieldValues } from "react-hook-form";
 
 const inventory = [
   { id: 1, name: "Paracetamol", quantity: 120, category: "Pain Relief" },
@@ -34,6 +36,10 @@ const Inventory = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [exportCategory, setExportCategory] = useState("all");
   const [isGenerating, setIsGenerating] = useState(false);
+  const handleSubmit = (data: FieldValues) => {
+    console.log("Form Data Submitted:", data);
+    setModalOpen(false);
+  };
 
   const generateExport = () => {
     setIsGenerating(true);
@@ -65,7 +71,7 @@ const Inventory = () => {
           <Button variant="outline" onClick={() => setModalOpen(true)}>
             <FileDown className="w-4 h-4 mr-2" /> Export
           </Button>
-          <Button>
+          <Button onClick={() => setModalOpen(true)}>
             <Plus className="w-4 h-4 mr-2" /> Add Medicine
           </Button>
         </div>
@@ -150,7 +156,14 @@ const Inventory = () => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-      <InventoryForm onSubmit={() => {}} />
+      <PharmaModal
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+        title="Add New Medicine"
+        description="Please fill out the form to register a new medicine."
+      >
+        <InventoryForm onSubmit={handleSubmit} />
+      </PharmaModal>
     </section>
   );
 };

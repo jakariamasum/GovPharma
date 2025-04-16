@@ -1,4 +1,3 @@
-// components/ui/dialog.tsx
 "use client";
 
 import React, { useEffect } from "react";
@@ -55,17 +54,33 @@ export function DialogContent({
   return <div className={cn("p-6 space-y-4", className)}>{children}</div>;
 }
 
-export function DialogHeader({ children }: { children: React.ReactNode }) {
+export function DialogHeader({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="border-b border-gray-200 dark:border-slate-700 p-4 pb-2">
+    <div
+      className={`${className} border-b border-gray-200 dark:border-slate-700 p-4 pb-2`}
+    >
       {children}
     </div>
   );
 }
 
-export function DialogTitle({ children }: { children: React.ReactNode }) {
+export function DialogTitle({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <h2 className="text-lg font-semibold text-gray-900 dark:text-slate-100">
+    <h2
+      className={`${className}text-lg font-semibold text-gray-900 dark:text-slate-100`}
+    >
       {children}
     </h2>
   );

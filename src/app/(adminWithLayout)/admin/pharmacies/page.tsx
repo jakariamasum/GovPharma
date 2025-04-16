@@ -11,15 +11,8 @@ import {
   PharmaTableHeader,
   PharmaTableRow,
 } from "@/components/ui/table";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialoge";
 import PharmacyForm from "@/components/add-pharmacy-form";
+import PharmaModal from "@/components/modal/PharmaModal";
 import { FieldValues } from "react-hook-form";
 
 const pharmacies = [
@@ -36,8 +29,10 @@ const pharmacies = [
 const Pharmacies = () => {
   const [search, setSearch] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
+
   const handleSubmit = (data: FieldValues) => {
-    console.log(data);
+    console.log("Form Data Submitted:", data);
+    setModalOpen(false);
   };
 
   return (
@@ -55,7 +50,7 @@ const Pharmacies = () => {
               onChange={(e) => {
                 setSearch(e.target.value);
               }}
-              placeholder="Search medicine..."
+              placeholder="Search pharmacy..."
               className="border border-teal-800 pl-10 pr-4 py-2 text-sm  rounded-lg bg-white dark:bg-slate-800 dark:text-white dark:border-slate-700 focus:ring-2 focus:ring-teal-800 outline-none"
             />
           </div>
@@ -66,17 +61,6 @@ const Pharmacies = () => {
             <Plus className="w-4 h-4 mr-2" /> Add Pharmacy
           </Button>
         </div>
-      </div>
-
-      <div className="relative max-w-sm">
-        <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search pharmacy..."
-          className="pl-10 pr-4 py-2 text-sm border rounded-lg w-full dark:bg-gray-800 dark:text-white dark:border-gray-700"
-        />
       </div>
 
       <div className="overflow-auto rounded-lg shadow-md">
@@ -106,24 +90,16 @@ const Pharmacies = () => {
         </PharmaTable>
       </div>
 
-      <Dialog open={modalOpen} onOpenChange={setModalOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Add New Pharmacy</DialogTitle>
-          </DialogHeader>
-
-          <PharmacyForm handleSubmit={handleSubmit} />
-
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button type="button" variant="outline">
-                Cancel
-              </Button>
-            </DialogClose>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+      <PharmaModal
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+        title="Add New Pharmacy"
+        description="Please fill out the form to register a new pharmacy."
+      >
+        <PharmacyForm handleSubmit={handleSubmit} />
+      </PharmaModal>
     </section>
   );
 };
+
 export default Pharmacies;
