@@ -11,7 +11,8 @@ const HelpSupport = () => {
           Help & Support
         </h1>
         <p className="text-gray-600 dark:text-gray-300">
-          We're here to help. Reach out to us with any questions or concerns.
+          We&lsquo;re here to help. Reach out to us with any questions or
+          concerns.
         </p>
       </header>
 
@@ -22,7 +23,7 @@ const HelpSupport = () => {
             <h2 className="text-lg font-semibold">Email Us</h2>
           </div>
           <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
-            Send us an email and we'll get back to you within 24 hours.
+            Send us an email and we&lsquo;ll get back to you within 24 hours.
           </p>
           <Button variant="outline">support@govpharm.com</Button>
         </div>
